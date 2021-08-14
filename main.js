@@ -21,7 +21,7 @@ function add() {
 }
 
 function uploadBackground() {
-    ctx.drawImage(backgroundimg, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(backgroundimg, 0, 0, canvas.width + 200, canvas.height + 200);
 }
 
 function uploadRover() {
@@ -46,33 +46,29 @@ function my_keydown(e) {
 }
 
 function left() {
-    if (rover_x > 0) {
-        rover_x = rover_x - 5;
-        uploadBackground();
-        uploadRover();
-    }
+    if (rover_x >= 0) {
+        rover_x -= 5;
+        add();
+        }
 }
 
 function right() {
-    if (rover_x < 600) {
-        rover_x = rover_x + 5;
-        uploadBackground();
-        uploadRover();
+    if (rover_x <= 520) {
+        rover_x += 5;
+        add();      
     }
 }
 
 function up() {
-    if (rover_y > 0) {
-        rover_y = rover_y - 5;
-        uploadBackground();
-        uploadRover();
+    if (rover_y >= 0) {
+        rover_y -= 5;
+        add();
     }
 }
 
 function down() {
-    if (rover_y < 400) {
-        rover_y = rover_y + 5;
-        uploadBackground();
-        uploadRover();
+    if (rover_y <= 325) {
+        rover_y += 5;
+        add();
     }
 }
